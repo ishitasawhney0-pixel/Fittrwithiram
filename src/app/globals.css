@@ -1,26 +1,103 @@
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #10110e;
+  --foreground: #f5f4ed;
+  --surface: #191a16;
+  --surface-light: #24251f;
+  --lime: #c5f36b;
+  --lime-dark: #9acb42;
+  --ivory: #f5f3eb;
+  --muted: #a3a49a;
+  --border: rgba(255,255,255,0.12);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-lime: var(--lime);
+  --color-ivory: var(--ivory);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--lime);
+  color: #10110e;
+}
+
+.container-main {
+  width: min(1320px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.display-heading {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.eyebrow {
+  color: var(--lime);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.lime-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 999px;
+  background: var(--lime);
+  color: #11130d;
+  padding: 15px 25px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.lime-button:hover {
+  background: #d7ff91;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .container-main {
+    width: calc(100% - 36px);
+  }
 }
