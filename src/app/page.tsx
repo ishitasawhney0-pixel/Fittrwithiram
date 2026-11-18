@@ -1,10 +1,10 @@
-
 "use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  Award,
   Play,
   Menu,
   X,
@@ -89,9 +89,9 @@ export default function Home() {
             ))}
           </div>
 
-      <a href="/contact" className="lime-button hidden sm:inline-flex">
-  Apply for coaching <ArrowRight size={16} />
-</a>
+          <a href="/contact" className="lime-button hidden sm:inline-flex">
+            Apply for coaching <ArrowRight size={16} />
+          </a>
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -115,7 +115,7 @@ export default function Home() {
               </a>
             ))}
             <a
-             href="/contact"
+              href="/contact"
               onClick={() => setMenuOpen(false)}
               className="lime-button mt-5 w-full"
             >
@@ -336,18 +336,35 @@ export default function Home() {
               <br />
               <span className="text-[#c5f36b]">Your Strength.</span>
             </h2>
-            <p className="mt-8 max-w-[500px] text-sm leading-8 text-white/60">
+
+            {/* Credentials Textbox */}
+            <div className="mt-6 inline-flex items-center gap-2.5 rounded-xl border border-[#c5f36b]/25 bg-[#c5f36b]/10 px-4 py-2.5 text-xs font-medium tracking-wide text-[#c5f36b]">
+              <Award size={16} className="shrink-0" />
+              <span>Certified Nutritionist &amp; Fitness Specialist</span>
+            </div>
+
+            <p className="mt-7 max-w-[500px] text-sm leading-8 text-white/60">
               Fitness is more than a physical transformation. It is
               about building confidence, developing discipline and
               creating habits that last.
             </p>
             <p className="mt-4 max-w-[500px] text-sm leading-8 text-white/60">
-              Discover a coaching approach that puts your goals,
+              With evidence-based nutrition and structured fitness coaching,
+              Iram brings a realistic, supportive approach that puts your goals,
               lifestyle and long-term wellbeing first.
             </p>
-            <a href="#contact" className="lime-button mt-9">
-              Start your journey <ArrowRight size={17} />
-            </a>
+
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <a href="#contact" className="lime-button">
+                Start your journey <ArrowRight size={17} />
+              </a>
+              <a
+                href="/about"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-[14px] text-sm transition hover:border-[#c5f36b] hover:text-[#c5f36b]"
+              >
+                More about Iram
+              </a>
+            </div>
           </div>
         </div>
       </section>
